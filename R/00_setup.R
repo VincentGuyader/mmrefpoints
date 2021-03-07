@@ -8,10 +8,17 @@ nyears.simple <- 100
 plotyears <- 50
 cat <- message
 options(shiny.reactlog = TRUE)
-i18n <- shiny.i18n::Translator$new(translation_json_path = here::here(
-  "R","Documentation",
-  "translation_maritza.json"
-))
+i18n <- shiny.i18n::Translator$new(translation_json_path = 
+                                     
+#                                      here::here(
+#   "R","Documentation",
+#   "translation_maritza.json"
+# )
+# golem:::app_sys("Documentation",
+#        "translation_maritza.json")
+system.file(package = "mmrefpoints","Documentation",
+            "translation_maritza.json")
+)
 
 #source(here::here("R","GetF_GetRecAtF_v4.R"))
 #source(here::here("R","getMNPL.R"))
@@ -262,7 +269,7 @@ jumbotron2 <- function (header, content, button = TRUE){
 
 
 # Load documentation ------------------------------------------------------
-documentationpath <- here::here("R","Documentation")
+# documentationpath <- here::here("R","Documentation")
 
 
 # Life history parameters -------------------------------------------------
